@@ -1,0 +1,26 @@
+{% comment %}
+  story-panel.liquid – rich text with image position toggle
+{% endcomment %}
+
+<section class="story-panel page-width flex flex-col md:flex-row{% if section.settings.image_position == 'right' %} md:flex-row-reverse{% endif %}">
+  <div class="md:w-1/2">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1024 | image_tag: class: 'w-full h-auto' }}
+    {% endif %}
+  </div>
+  <div class="md:w-1/2 flex items-center p-8">
+    {{ section.settings.content }}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Story Panel",
+  "settings": [
+    { "id": "image", "type": "image_picker", "label": "Image" },
+    { "id": "image_position", "type": "select", "default": "left", "label": "Image position", "options": [{"value":"left","label":"Left"},{"value":"right","label":"Right"}] },
+    { "id": "content", "type": "richtext", "label": "Content" }
+  ],
+  "presets": [{ "name": "Story Panel" }]
+}
+{% endschema %}
