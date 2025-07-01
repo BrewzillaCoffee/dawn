@@ -1452,4 +1452,16 @@
       }
     ]
   }
+  ,
+  {
+    "name": "Announcement",
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcement_bar_text",
+        "label": "Announcement bar text",
+        "default": "Free shipping on orders over $50"
+      }
+    ]
+  }
 ]

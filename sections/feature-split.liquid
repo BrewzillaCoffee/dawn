@@ -1,0 +1,32 @@
+{% comment %}
+  feature-split.liquid – image left, text right
+{% endcomment %}
+
+<section class="feature-split page-width grid md:grid-cols-2 gap-8 items-center">
+  <div>
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 800 | image_tag }}
+    {% endif %}
+  </div>
+  <div>
+    <h2 class="text-3xl font-bold mb-4">{{ section.settings.heading }}</h2>
+    <div class="rte mb-4">{{ section.settings.text }}</div>
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="btn">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature Split",
+  "settings": [
+    {"id":"image","type":"image_picker","label":"Image"},
+    {"id":"heading","type":"text","label":"Heading"},
+    {"id":"text","type":"richtext","label":"Text"},
+    {"id":"button_text","type":"text","label":"Button text"},
+    {"id":"button_link","type":"url","label":"Button link"}
+  ],
+  "presets": [{"name":"Feature Split"}]
+}
+{% endschema %}

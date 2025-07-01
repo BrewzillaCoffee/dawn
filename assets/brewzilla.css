@@ -1,0 +1,13 @@
+:root {
+  --color-cta: #ff5400;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.press-logos img {
+  filter: grayscale(100%);
+}
+[data-fade]{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.fade-in{opacity:1;transform:none;}

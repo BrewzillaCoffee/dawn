@@ -1,0 +1,41 @@
+{% comment %}
+  story-grid.liquid – image grid with captions
+{% endcomment %}
+
+<section class="story-grid page-width">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {% for block in section.blocks %}
+      <div class="text-center" {{ block.shopify_attributes }}>
+        {% if block.settings.image != blank %}
+          {{ block.settings.image | image_url: width: 800 | image_tag }}
+        {% endif %}
+        <h3 class="mt-2 mb-1 font-bold">{{ block.settings.heading }}</h3>
+        <p class="mb-2">{{ block.settings.text }}</p>
+        {% if block.settings.button_label != blank %}
+          <a href="{{ block.settings.button_link }}" class="btn">{{ block.settings.button_label }}</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Story Grid",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type":"tile",
+      "name":"Tile",
+      "settings":[
+        {"id":"image","type":"image_picker","label":"Image"},
+        {"id":"heading","type":"text","label":"Headline"},
+        {"id":"text","type":"text","label":"Copy"},
+        {"id":"button_label","type":"text","label":"CTA"},
+        {"id":"button_link","type":"url","label":"Link"}
+      ]
+    }
+  ],
+  "presets":[{"name":"Story Grid"}]
+}
+{% endschema %}
