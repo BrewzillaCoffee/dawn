@@ -1,0 +1,51 @@
+{% comment %}
+  three-columns.liquid - header with three image+text columns
+{% endcomment %}
+
+<section class="three-columns page-width text-center">
+  {% if section.settings.heading != blank %}
+    <h2 class="text-3xl font-bold mb-8">{{ section.settings.heading }}</h2>
+  {% endif %}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {% for block in section.blocks %}
+      <div {{ block.shopify_attributes }}>
+        {% if block.settings.image != blank %}
+          {{ block.settings.image | image_url: width: 600 | image_tag }}
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <p class="mt-4">{{ block.settings.text }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Three Columns",
+  "max_blocks": 3,
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading" }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        { "id": "image", "type": "image_picker", "label": "Image" },
+        { "id": "text", "type": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Three Columns",
+      "blocks": [
+        { "type": "column" },
+        { "type": "column" },
+        { "type": "column" }
+      ]
+    }
+  ]
+}
+{% endschema %}
