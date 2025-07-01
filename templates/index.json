@@ -1,13 +1,132 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": { "type": "hero-banner" },
-    "marquee": { "type": "product-marquee", "settings": { "collection": "best-sellers" } },
-    "usps": { "type": "feature-icons" },
-    "story": { "type": "story-panel" },
-    "recipes": { "type": "recipe-carousel" },
-    "ugc": { "type": "ugc-carousel" },
-    "press": { "type": "press-logos" },
-    "signup": { "type": "newsletter-signup" }
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "bg": "shopify://shop_images/emsbanner.png",
+        "heading": "COFFEE WITH BITE",
+        "subtext": "Limited-edition brews unleashed for the bold.",
+        "cta_label": "Reserve My Bag",
+        "cta_link": ""
+      }
+    },
+    "marquee": {
+      "type": "product-marquee",
+      "settings": {
+        "collection": "best-sellers",
+        "limit": 8,
+        "predictive_add": true,
+        "heading": "Featured products"
+      }
+    },
+    "usps": {
+      "type": "feature-icons",
+      "blocks": {
+        "icon_jqeitW": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/apple-touch-icon.png",
+            "title": "",
+            "text": ""
+          }
+        },
+        "icon_FWqPGX": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify://shop_images/apple-touch-icon.png",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_jqeitW",
+        "icon_FWqPGX"
+      ],
+      "settings": {}
+    },
+    "story": {
+      "type": "story-panel",
+      "settings": {
+        "image_position": "left",
+        "content": ""
+      }
+    },
+    "recipes": {
+      "type": "recipe-carousel",
+      "blocks": {
+        "article_HVAPny": {
+          "type": "article",
+          "settings": {
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "article_HVAPny"
+      ],
+      "settings": {
+        "heading": "Recipes"
+      }
+    },
+    "ugc": {
+      "type": "ugc-carousel",
+      "blocks": {
+        "video_7qN8ML": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "media": "shopify://files/videos/VID-20250629-WA0005.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_7qN8ML"
+      ],
+      "settings": {
+        "heading": "As seen on TikTok"
+      }
+    },
+    "press": {
+      "type": "press-logos",
+      "blocks": {
+        "logo_yAktRJ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/apple-touch-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_yAktRJ"
+      ],
+      "settings": {}
+    },
+    "signup": {
+      "type": "newsletter-signup",
+      "settings": {
+        "heading": "Subscribe",
+        "button_label": "Subscribe"
+      }
+    }
   },
-  "order": ["hero", "marquee", "usps", "story", "recipes", "ugc", "press", "signup"]
+  "order": [
+    "hero",
+    "marquee",
+    "usps",
+    "story",
+    "recipes",
+    "ugc",
+    "press",
+    "signup"
+  ]
 }
