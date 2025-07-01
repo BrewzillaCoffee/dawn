@@ -1,13 +1,44 @@
-:root {
-  --color-cta: #ff5400;
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600&display=swap');
+
+:root{
+  /* colours */
+  --bz-purple:#5321A6;
+  --bz-green:#2AFF7F;
+  --bz-ink:#141414;
+  --bz-cream:#FFF7ED;
+
+  /* typography */
+  --font-headings:'Archivo Black', sans-serif;
+  --font-body:'Inter', sans-serif;
 }
 
-.card:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+body{font-family:var(--font-body);color:var(--bz-ink);background:var(--bz-cream);}
+h1,h2,h3,h4{font-family:var(--font-headings);}
+
+.announcement-bar{background:var(--bz-purple);color:#fff;height:40px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+
+.btn{background:var(--bz-green);color:#000;padding:0.9rem 2.4rem;border-radius:9999px;font-weight:600;transition:transform .15s ease-in-out;}
+.btn:hover{transform:scale(1.05);}
+
+.hero-banner{background-size:cover;background-position:center;padding:8rem 1rem;text-align:center;color:#fff;}
+
+.product-marquee .card{box-shadow:0 6px 16px rgb(0 0 0 / .08);border-radius:12px;transition:transform .15s;}
+.product-marquee .card:hover{transform:translateY(-4px);}
+.product-marquee .price{font-weight:600;}
+
+.quick-add__submit{background:var(--bz-purple);color:#fff;border-radius:8px;font-weight:600;}
+.quick-add__submit:hover{background:#3e1781;}
+
+.usp-icons{display:flex;gap:2rem;justify-content:center;margin:4rem 0;}
+.usp-icons svg{width:56px;height:56px;margin-bottom:.5rem;fill:none;stroke:var(--bz-purple);stroke-width:2px;}
+
+.press-logos img{filter:grayscale(100%);opacity:.6;transition:opacity .2s;}
+.press-logos img:hover{opacity:1;}
+
+@media (prefers-reduced-motion:no-preference){
+  .fade-in{opacity:0;transform:translateY(20px);transition:all .4s ease-out;}
+  .fade-in.is-visible{opacity:1;transform:none;}
 }
 
-.press-logos img {
-  filter: grayscale(100%);
-}
-[data-fade]{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
-.fade-in{opacity:1;transform:none;}
+@media(min-width:768px){h1.hero-title{font-size:4.5rem;}}
+@media(min-width:1280px){h1.hero-title{font-size:6rem;}}

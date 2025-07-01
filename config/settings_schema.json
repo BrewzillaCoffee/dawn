@@ -1463,5 +1463,16 @@
         "default": "Free shipping on orders over $50"
       }
     ]
+  },
+  {
+    "name": "Brewzilla colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bz_purple",
+        "label": "Brewzilla purple",
+        "default": "#5321A6"
+      }
+    ]
   }
 ]
