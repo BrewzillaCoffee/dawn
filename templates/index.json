@@ -11,11 +11,21 @@
   "sections": {
     "hero": {
       "type": "hero-banner",
-      "settings": {}
+      "settings": {
+        "heading": "COFFEE WITH BITE",
+        "subtext": "Limited-edition brews unleashed for the bold.",
+        "cta_label": "Reserve My Bag",
+        "cta_link": ""
+      }
     },
     "marquee": {
       "type": "product-marquee",
-      "settings": {}
+      "settings": {
+        "collection": "",
+        "limit": 8,
+        "enable_quick_add": true,
+        "heading": "Featured products"
+      }
     },
     "usps": {
       "type": "usp-icons",
@@ -23,15 +33,52 @@
     },
     "feature": {
       "type": "feature-split",
-      "settings": {}
+      "settings": {
+        "heading": "",
+        "text": "",
+        "button_text": "",
+        "button_link": ""
+      }
     },
     "ugc": {
       "type": "ugc-carousel",
-      "settings": {}
+      "settings": {
+        "heading": "As seen on TikTok"
+      }
     },
     "compare": {
       "type": "comparison-table",
-      "settings": {}
+      "blocks": {
+        "column_Jy9kQk": {
+          "type": "column",
+          "settings": {
+            "heading": "Brewzilla",
+            "id": "Roasted < 7 days"
+          }
+        },
+        "column_Few9Lh": {
+          "type": "column",
+          "settings": {
+            "heading": "Big Brand",
+            "id": ""
+          }
+        },
+        "column_463iKH": {
+          "type": "column",
+          "settings": {
+            "heading": "Speciality",
+            "id": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Jy9kQk",
+        "column_Few9Lh",
+        "column_463iKH"
+      ],
+      "settings": {
+        "rows": "[\n  {\n    \"metric\": \"Freshness\",\n    \"brewzilla\": \"Roasted to order – ships within 48 h\",\n    \"big_brand\": \"Batch-roasted weeks in advance\",\n    \"specialty\": \"Roasted 7-14 days ago\"\n  },\n  {\n    \"metric\": \"Traceable sourcing\",\n    \"brewzilla\": \"Single-origin • farm & lot on every bag\",\n    \"big_brand\": \"Blend • origins undisclosed\",\n    \"specialty\": \"Origin shown, traceability varies\"\n  },\n  {\n    \"metric\": \"Limited editions\",\n    \"brewzilla\": \"One-time drops — never re-roasted\",\n    \"big_brand\": \"Same menu all year\",\n    \"specialty\": \"Seasonal releases, often repeated\"\n  },\n  {\n    \"metric\": \"Collectible artwork\",\n    \"brewzilla\": \"Indie-illustrated bags (new art each drop)\",\n    \"big_brand\": \"Corporate branding\",\n    \"specialty\": \"Origin or logo-led design\"\n  },\n  {\n    \"metric\": \"Flavour intensity\",\n    \"brewzilla\": \"Dark-chocolate punch, black-cherry finish\",\n    \"big_brand\": \"Balanced but muted\",\n    \"specialty\": \"Nuanced, lighter profile\"\n  }\n]"
+      }
     },
     "story": {
       "type": "story-grid",
@@ -39,7 +86,12 @@
     },
     "press": {
       "type": "press-recipe-newsletter",
-      "settings": {}
+      "settings": {
+        "logos": "",
+        "heading": "",
+        "placeholder": "",
+        "button_label": ""
+      }
     }
   },
   "order": [
