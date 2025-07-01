@@ -18,6 +18,18 @@
         "cta_link": ""
       }
     },
+    "three_columns": {
+      "type": "three-columns",
+      "settings": {
+        "heading": ""
+      },
+      "blocks": {
+        "col1": {"type": "column", "settings": {"image": "", "text": ""}},
+        "col2": {"type": "column", "settings": {"image": "", "text": ""}},
+        "col3": {"type": "column", "settings": {"image": "", "text": ""}}
+      },
+      "block_order": ["col1", "col2", "col3"]
+    },
     "marquee": {
       "type": "product-marquee",
       "settings": {
@@ -96,6 +108,7 @@
   },
   "order": [
     "hero",
+    "three_columns",
     "marquee",
     "usps",
     "feature",
