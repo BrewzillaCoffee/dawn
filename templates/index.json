@@ -1,13 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": { "type": "hero-banner" },
-    "marquee": { "type": "product-marquee" },
-    "usps": { "type": "usp-icons" },
-    "feature": { "type": "feature-split" },
-    "ugc": { "type": "ugc-carousel" },
-    "compare": { "type": "comparison-table" },
-    "story": { "type": "story-grid" },
-    "press": { "type": "press-recipe-newsletter" }
+    "hero": {
+      "type": "hero-banner",
+      "settings": {}
+    },
+    "marquee": {
+      "type": "product-marquee",
+      "settings": {}
+    },
+    "usps": {
+      "type": "usp-icons",
+      "settings": {}
+    },
+    "feature": {
+      "type": "feature-split",
+      "settings": {}
+    },
+    "ugc": {
+      "type": "ugc-carousel",
+      "settings": {}
+    },
+    "compare": {
+      "type": "comparison-table",
+      "settings": {}
+    },
+    "story": {
+      "type": "story-grid",
+      "settings": {}
+    },
+    "press": {
+      "type": "press-recipe-newsletter",
+      "settings": {}
+    }
   },
-  "order": ["hero","marquee","usps","feature","ugc","compare","story","press"]
+  "order": [
+    "hero",
+    "marquee",
+    "usps",
+    "feature",
+    "ugc",
+    "compare",
+    "story",
+    "press"
+  ]
 }
