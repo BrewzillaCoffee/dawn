@@ -8,7 +8,11 @@
   <div class="grid grid--2-col-tablet-down grid--4-col-desktop">
     {% for product in collection.products limit: section.settings.limit %}
       <div class="card">
-        {% render 'card-product', card_product: product, predictive_add: section.settings.predictive_add %}
+        {% if section.settings.enable_quick_add %}
+          {% render 'card-product', card_product: product, quick_add: 'standard' %}
+        {% else %}
+          {% render 'card-product', card_product: product %}
+        {% endif %}
       </div>
     {% endfor %}
   </div>
@@ -20,7 +24,7 @@
   "settings": [
     { "id": "collection", "type": "collection", "label": "Collection" },
     { "id": "limit", "type": "range", "min": 2, "max": 12, "step": 2, "default": 8, "label": "Products to show" },
-    { "id": "predictive_add", "type": "checkbox", "label": "Enable predictive add", "default": true },
+    { "id": "enable_quick_add", "type": "checkbox", "label": "Enable quick add", "default": true },
     { "id": "heading", "type": "text", "label": "Heading", "default": "Featured products" }
   ],
   "presets": [{ "name": "Product Marquee" }]

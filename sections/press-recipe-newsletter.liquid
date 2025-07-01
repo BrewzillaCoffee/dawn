@@ -1,0 +1,49 @@
+{% comment %}
+  press-recipe-newsletter.liquid – logos, recipe articles and signup
+{% endcomment %}
+
+<section class="press-recipe-newsletter page-width">
+  <div class="press-logos flex justify-center gap-8 mb-8">
+    {% for url in section.settings.logos %}
+      {{ url | image_url: width: 160 | image_tag: alt: 'logo', width: 160, height: 40 }}
+    {% endfor %}
+  </div>
+  <div class="recipe-slider grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    {% for block in section.blocks %}
+      {% assign a = articles[block.settings.article] %}
+      <a href="{{ a.url }}" class="block" {{ block.shopify_attributes }}>
+        {% if a.image %}{{ a.image | image_url: width: 800 | image_tag }}{% endif %}
+        <h3 class="mt-2">{{ a.title }}</h3>
+      </a>
+    {% endfor %}
+  </div>
+  <div class="signup text-center">
+    <h2 class="text-2xl font-bold">{{ section.settings.heading }}</h2>
+    {% form 'customer', action: '/contact#contact_form' %}
+      <input type="email" name="contact[email]" placeholder="{{ section.settings.placeholder }}" required>
+      <button type="submit" class="btn">{{ section.settings.button_label }}</button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Press Recipe Newsletter",
+  "settings": [
+    {"id":"logos","type":"textarea","label":"Logo URLs"},
+    {"id":"heading","type":"text","label":"Signup heading"},
+    {"id":"placeholder","type":"text","label":"Form placeholder"},
+    {"id":"button_label","type":"text","label":"Button label"}
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "settings": [
+        {"id":"article","type":"article","label":"Blog article"}
+      ]
+    }
+  ],
+  "presets":[{"name":"Press Recipe Newsletter"}]
+}
+{% endschema %}

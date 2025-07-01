@@ -1,0 +1,43 @@
+{% comment %}
+  comparison-table.liquid – simple comparison chart
+{% endcomment %}
+
+<section class="comparison-table page-width">
+  <table class="min-w-full text-left">
+    <thead>
+      <tr>
+        <th></th>
+        {% for column in section.blocks %}
+          <th>{{ column.settings.heading }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in section.settings.rows %}
+        <tr>
+          <th>{{ row.label }}</th>
+          {% for column in section.blocks %}
+            <td>{{ row[column.id] }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+{% schema %}
+{
+  "name": "Comparison Table",
+  "settings": [
+    {"id":"rows","type":"textarea","label":"JSON rows"}
+  ],
+  "blocks": [
+    {
+      "type":"column",
+      "name":"Column",
+      "settings":[{"id":"heading","type":"text","label":"Heading"},{"id":"id","type":"text","label":"Key"}]
+    }
+  ],
+  "presets":[{"name":"Comparison Table"}]
+}
+{% endschema %}
