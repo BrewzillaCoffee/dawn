@@ -6,19 +6,19 @@
   <table class="min-w-full text-left">
     <thead>
       <tr>
-        <th></th>
-        {% for column in section.blocks %}
-          <th>{{ column.settings.heading }}</th>
-        {% endfor %}
+        <th>Metric</th>
+        <th>Brewzilla</th>
+        <th>Big brand</th>
+        <th>Specialty</th>
       </tr>
     </thead>
     <tbody>
-      {% for row in section.settings.rows %}
-        <tr>
-          <th>{{ row.label }}</th>
-          {% for column in section.blocks %}
-            <td>{{ row[column.id] }}</td>
-          {% endfor %}
+      {% for block in section.blocks %}
+        <tr {{ block.shopify_attributes }}>
+          <td>{{ block.settings.metric }}</td>
+          <td>{{ block.settings.brewzilla }}</td>
+          <td>{{ block.settings.big_brand }}</td>
+          <td>{{ block.settings.specialty }}</td>
         </tr>
       {% endfor %}
     </tbody>
@@ -27,17 +27,19 @@
 
 {% schema %}
 {
-  "name": "Comparison Table",
-  "settings": [
-    {"id":"rows","type":"textarea","label":"JSON rows"}
-  ],
+  "name": "Comparison table",
   "blocks": [
     {
-      "type":"column",
-      "name":"Column",
-      "settings":[{"id":"heading","type":"text","label":"Heading"},{"id":"id","type":"text","label":"Key"}]
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        { "type": "text", "id": "metric", "label": "Metric" },
+        { "type": "text", "id": "brewzilla", "label": "Brewzilla" },
+        { "type": "text", "id": "big_brand", "label": "Big brand" },
+        { "type": "text", "id": "specialty", "label": "Specialty" }
+      ]
     }
   ],
-  "presets":[{"name":"Comparison Table"}]
+  "presets": [{ "name": "Comparison table" }]
 }
 {% endschema %}
