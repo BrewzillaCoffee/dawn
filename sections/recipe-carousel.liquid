@@ -1,0 +1,42 @@
+{% comment %}
+  recipe-carousel.liquid – showcase up to 8 recipe articles
+{% endcomment %}
+
+<section class="recipe-carousel page-width">
+  <h2 class="text-center text-3xl font-bold mb-8">{{ section.settings.heading }}</h2>
+  <div class="grid grid--2-col-tablet-down grid--4-col-desktop">
+    {% for block in section.blocks %}
+      {% assign article = articles[block.settings.article] %}
+      {% if article %}
+        <div class="card" {{ block.shopify_attributes }}>
+          <a href="{{ article.url }}">
+            {% if article.image %}
+              {{ article.image | image_url: width: 480 | image_tag }}
+            {% endif %}
+            <h3 class="mt-4">{{ article.title }}</h3>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Recipe Carousel",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "Recipes" }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "settings": [
+        { "id": "article", "type": "article", "label": "Recipe article" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Recipe Carousel" }]
+}
+{% endschema %}

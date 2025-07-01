@@ -1,0 +1,26 @@
+{% comment %}
+  hero-banner.liquid – full-bleed image + headline + CTA
+{% endcomment %}
+
+<section class="hero-banner relative bg-cover bg-center text-white"
+        style="background-image:url({{ section.settings.bg | img_url: '2048x' }})">
+  <div class="hero-inner max-w-5xl mx-auto py-28 text-center">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">{{ section.settings.heading }}</h1>
+    <p class="text-xl mb-8">{{ section.settings.subtext }}</p>
+    <a href="{{ section.settings.cta_link }}" class="btn">{{ section.settings.cta_label }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero – Full Bleed",
+  "settings": [
+    { "id": "bg", "type": "image_picker", "label": "Background image" },
+    { "id": "heading", "type": "text", "default": "COFFEE WITH BITE", "label": "Heading" },
+    { "id": "subtext", "type": "text", "default": "Limited-edition brews unleashed for the bold.", "label": "Sub-text" },
+    { "id": "cta_label", "type": "text", "default": "Reserve My Bag", "label": "CTA Label" },
+    { "id": "cta_link", "type": "url",  "label": "CTA Link" }
+  ],
+  "presets": [{ "name": "Hero – Full Bleed" }]
+}
+{% endschema %}

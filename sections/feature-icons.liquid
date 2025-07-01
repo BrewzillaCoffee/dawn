@@ -1,0 +1,36 @@
+{% comment %}
+  feature-icons.liquid – four USP icon blocks
+{% endcomment %}
+
+<section class="feature-icons page-width text-center">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+    {% for block in section.blocks %}
+      <div class="p-4" {{ block.shopify_attributes }}>
+        {% if block.settings.icon != blank %}
+          {{ block.settings.icon | image_url: width: 64 | image_tag }}
+        {% endif %}
+        <h3 class="font-bold mb-2">{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature Icons",
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "settings": [
+        { "id": "icon", "type": "image_picker", "label": "Icon" },
+        { "id": "title", "type": "text", "label": "Title" },
+        { "id": "text", "type": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Feature Icons" }]
+}
+{% endschema %}

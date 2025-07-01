@@ -1,0 +1,38 @@
+{% comment %}
+  ugc-carousel.liquid – slider of user generated videos
+{% endcomment %}
+
+<section class="ugc-carousel page-width">
+  <h2 class="text-center text-3xl font-bold mb-8">{{ section.settings.heading }}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {% for block in section.blocks %}
+      <div {{ block.shopify_attributes }}>
+        {% if block.settings.video_url != blank %}
+          <video controls src="{{ block.settings.video_url }}" class="w-full"></video>
+        {% elsif block.settings.media != blank %}
+          {{ block.settings.media | media_tag }}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UGC Carousel",
+  "settings": [
+    { "id": "heading", "type": "text", "label": "Heading", "default": "As seen on TikTok" }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        { "id": "video_url", "type": "url", "label": "Video URL" },
+        { "id": "media", "type": "video", "label": "Uploaded media" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "UGC Carousel" }]
+}
+{% endschema %}

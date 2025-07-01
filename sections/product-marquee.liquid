@@ -1,0 +1,28 @@
+{% comment %}
+  product-marquee.liquid – horizontal product slider
+{% endcomment %}
+
+{% assign collection = collections[section.settings.collection] %}
+<section class="product-marquee page-width">
+  <h2 class="text-center text-3xl font-bold mb-8">{{ section.settings.heading }}</h2>
+  <div class="grid grid--2-col-tablet-down grid--4-col-desktop">
+    {% for product in collection.products limit: section.settings.limit %}
+      <div class="card">
+        {% render 'card-product', card_product: product, predictive_add: section.settings.predictive_add %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Marquee",
+  "settings": [
+    { "id": "collection", "type": "collection", "label": "Collection" },
+    { "id": "limit", "type": "range", "min": 2, "max": 12, "step": 2, "default": 8, "label": "Products to show" },
+    { "id": "predictive_add", "type": "checkbox", "label": "Enable predictive add", "default": true },
+    { "id": "heading", "type": "text", "label": "Heading", "default": "Featured products" }
+  ],
+  "presets": [{ "name": "Product Marquee" }]
+}
+{% endschema %}

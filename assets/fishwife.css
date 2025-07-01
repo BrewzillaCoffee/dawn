@@ -1,0 +1,26 @@
+.hero-banner .btn {
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  background: #ff9327; /* Fishwife orange, swap for Brewzilla purple */
+  transition: transform 0.15s ease;
+}
+.hero-banner .btn:hover {
+  transform: scale(1.05);
+}
+.product-marquee .card:hover {
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.12);
+}
+.feature-icons svg {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+}
+.press-logos img {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.press-logos img:hover {
+  opacity: 1;
+}
