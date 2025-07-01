@@ -3,7 +3,7 @@
 {% endcomment %}
 
 <section class="hero-banner relative bg-cover bg-center text-white"
-        style="background-image:url({{ section.settings.bg | img_url: '2048x' }})">
+        style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{ section.settings.bg | img_url: '2048x' }})">
   <div class="hero-inner max-w-5xl mx-auto py-28 text-center">
     <h1 class="text-5xl md:text-7xl font-bold mb-6">{{ section.settings.heading }}</h1>
     <p class="text-xl mb-8">{{ section.settings.subtext }}</p>
